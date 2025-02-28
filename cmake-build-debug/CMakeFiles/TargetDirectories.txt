@@ -1,0 +1,3 @@
+/Users/treyrachall/Desktop/project/cmake-build-debug/CMakeFiles/project.dir
+/Users/treyrachall/Desktop/project/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/treyrachall/Desktop/project/cmake-build-debug/CMakeFiles/rebuild_cache.dir
