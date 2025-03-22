@@ -185,6 +185,7 @@ void createAndSaveNPuzzles(const int& num_puzzles, const int& complexity_empty_b
         }else{
             cout << "!! Failed to write(" << filename << ") "<< total_success << "of " << num_puzzles << endl;
         }
+        deallocateBoard(BOARD, i);
     }
     cout << total_success << " files written out of " << num_puzzles <<endl;
 }

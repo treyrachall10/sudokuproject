@@ -24,7 +24,12 @@
 using namespace std;
 
 /**
-  * TODO: Provide appropriate Documentation, see other examples provided within the projects
+  * @brief Deallocates a dynamically allocated 2D integer array.
+  * Takes a pointer to dynamically created 2D array (BOARD)
+  * deallocates each row, then deallocates itself, then sets BOARD to nullptr
+  *
+  * @param BOARD board pointer to the dynamically allocated 2D array
+  * @param rows number of rows in the 2D array
   */
 void deallocateBoard(int** BOARD, const int& rows = 9);
 
