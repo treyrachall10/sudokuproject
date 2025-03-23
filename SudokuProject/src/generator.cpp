@@ -126,6 +126,14 @@ void fillBoardWithIndependentBox(int** BOARD) {
      * - Remaining cells should remain empty.
      */
 
+    for (int start = 0; start < 9; start +=3){
+        for (int row = start; row < start + 3; row++) {
+            for (int col = start; col < start + 3; col++) {
+                BOARD[row][col] = rand() % 9 + 1;
+            }
+        }
+    }
+
     // Dummy implementation:
     // Temporary static fill based on the provided example
     int staticBoard[9][9] = {
@@ -239,17 +247,10 @@ int** generateBoard(const int& empty_boxes){
      * @return int** A dynamically allocated 9x9 Sudoku board with 'empty_boxes' empty cells.
      */
 
-    // Dummy implementation: Returning static sudoku board
-    int** BOARD = new int*[9];
-    BOARD[0] = new int[9] {0, 0, 4, 0, 5, 0, 0, 0, 0};
-    BOARD[1] = new int[9] {9, 0, 0, 7, 3, 4, 6, 0, 0};
-    BOARD[2] = new int[9] {0, 0, 3, 0, 2, 1, 0, 4, 9};
-    BOARD[3] = new int[9] {0, 3, 5, 0, 9, 0, 4, 8, 0};
-    BOARD[4] = new int[9] {0, 9, 0, 0, 0, 0, 0, 3, 0};
-    BOARD[5] = new int[9] {0, 7, 6, 0, 1, 0, 9, 2, 0};
-    BOARD[6] = new int[9] {3, 1, 0, 9, 7, 0, 2, 0, 0};
-    BOARD[7] = new int[9] {0, 0, 9, 1, 8, 2, 0, 0, 3};
-    BOARD[8] = new int[9] {0, 0, 0, 0, 6, 0, 1, 0, 0};
+    int** BOARD = getEmptyBoard();
+    fillBoardWithIndependentBox(BOARD);
+    solve(BOARD);
+    deleteRandomItems(BOARD, empty_boxes);
 
     return BOARD;
 }

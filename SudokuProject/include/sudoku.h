@@ -42,7 +42,7 @@ bool solveBoard(int** BOARD, const int& r=0, const int& c=0);
 std::tuple<int, int, int> findNextCell(int** BOARD);
 
 
-/**
+  /**
   * TODO: Provide appropriate Documentation, see other examples provided within the projects
   */
 bool solveBoardEfficient(int** BOARD);

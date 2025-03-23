@@ -5,7 +5,7 @@
  * This header defines functions to:
  * - Create empty Sudoku boards.
  * - Fill independent diagonal boxes.
- * - Solve and generate a complete Sudoku board.
+ * -  and generate a complete Sudoku board.
  * - Randomly delete cells to create a solvable puzzle.
  * - Generate a complete Sudoku puzzle with a specific number of empty cells.
  *
@@ -34,8 +34,13 @@ int** getEmptyBoard();
 std::vector<int> getShuffledVector();
 
 /**
-  * TODO: Provide appropriate Documentation, see other examples provided within the projects
-  */
+ * @brief fills diagonal 3x3 boxes with random values 1-9.
+ *
+ * Iterates over 3 diagonal 3x3 boxes. Iterates over each row and column in box.
+ * Fills cells with random numbers 1-9
+ *
+ * @param BOARD A pointer to the 2D Sudoku board (int**) to fill.
+ */
 void fillBoardWithIndependentBox(int** BOARD);
 
 /**
