@@ -7,7 +7,7 @@
 using namespace std;
 
 // Define DEBUG_MODE to enable debug main, comment following to run the actual program
-//#define DEBUG_MODE
+#define DEBUG_MODE
 
 string PATH_TO_PUZZLES = "data/puzzles/";
 string PATH_TO_SOLUTIONS = "data/solutions/";
@@ -37,21 +37,22 @@ int main() {
     //
     cout << "Running in DEBUG MODE...\n";
 
-    // Example: Generate a single puzzle and print it
-    int** board = generateBoard(COMPLEXITY_EMPTY_BOXES);  // Generate with 40 empty cells
-    cout << "Generated Sudoku Puzzle:\n";
-    printBoard(board);  // Assuming printBoard is defined in sudoku_io.h
+    int** BOARD = new int*[9];
+    for(int i = 0; i < 9; i++){
+        BOARD[i] = new int[9] {0, 0, 0, 0, 0, 0, 0, 0, 0};
+    }//Initialization ends here
 
-    // Test solving the puzzle
-    if (solve(board)) {
-        cout << "Solved Puzzle:\n";
-        printBoard(board);
-    } else {
-        cout << "Failed to solve the puzzle.\n";
+    for (int start = 0; start < 9; start +=3){
+        for (int row = start; row < start + 3; row++) {
+            for (int col = start; col < start + 3; col++) {
+                BOARD[row][col] = rand() % 9 + 1;
+            }
+        }
     }
 
+
     // Clean up memory
-    deallocateBoard(board);
+    deallocateBoard(BOARD);
 
     return 0;
 }
