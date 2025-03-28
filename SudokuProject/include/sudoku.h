@@ -37,7 +37,11 @@ bool solveBoard(int** BOARD, const int& r=0, const int& c=0);
 
 
 /**
-  * TODO: Provide appropriate Documentation, see other examples provided within the projects
+  * @brief finds next cell with minimum amount of possibilities for number.
+  * Takes a pointer to dynamically created 2D array (BOARD)
+  *
+  * @param BOARD board pointer to the dynamically allocated 2D array
+  * @return tuple of best cell with minimum solutions for cell
   */
 std::tuple<int, int, int> findNextCell(int** BOARD);
 
