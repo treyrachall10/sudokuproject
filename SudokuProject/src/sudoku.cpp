@@ -123,7 +123,7 @@ tuple<int, int, int> findNextCell(int** BOARD) {
 
     for (int r = 0; r < 9; r++) {
         for (int c = 0; c < 9; c++) {
-            // TODO: Complete the logic inside this nested loop
+            // TODO: DDDDOOOOOONNNNEEEEE?
             /**
              * - Check if BOARD[r][c] is empty (value == 0).
              * - If empty, iterate over numbers 1 to 9.
@@ -131,6 +131,24 @@ tuple<int, int, int> findNextCell(int** BOARD) {
              * - Track the cell with the minimum number of options.
              * - Implement early exit if a cell with only one option is found.
              */
+            if (BOARD[r][c] == 0) {
+                int validOptions = 0;
+                for (int numCheck = 1; numCheck < 10; numCheck++) {
+                    if (isValid(BOARD, r, c, numCheck)) {
+                        validOptions += 1;
+                    }
+                }
+
+                if (validOptions == 1) {
+                    return {r, c, validOptions};
+                }
+
+                if (validOptions <= minOptions) {
+                    bestRow = r;
+                    bestCol = c;
+                    minOptions = validOptions;
+                }
+            }
         }
     }
     return {bestRow, bestCol, minOptions};
@@ -157,6 +175,8 @@ bool solveBoardEfficient(int** BOARD)
      * @param BOARD A 9x9 Sudoku board to be solved.
      * @return true if the board is successfully solved, false otherwise.
      */
+
+
     return false; //temporary
 }
 

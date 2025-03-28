@@ -123,9 +123,9 @@ std::vector<int> getShuffledVector() {
             */
 
 void fillBoardWithIndependentBox(int** BOARD) {
-    // TODO: Implement logic to fill diagonal 3x3 boxes
+    // TODO: DDDDOOOOOONNNEEEEE
     /**
-     * TODO:
+     * TODO: DDDDDDOOOOOONNNNEEEE
      * - Iterate over the three diagonal 3x3 boxes.
      * - Fill each box with unique numbers from 1 to 9.
      * - Use a shuffled vector for randomization.
@@ -144,27 +144,6 @@ void fillBoardWithIndependentBox(int** BOARD) {
             for (int col = start; col < start + 3; col++, pos++) {
                 BOARD[row][col] = shuffledNum[pos];
             }
-        }
-    }
-
-    // Dummy implementation:
-    // Temporary static fill based on the provided example
-    int staticBoard[9][9] = {
-        {1, 5, 6, 0, 0, 0, 0, 0, 0},
-        {2, 4, 7, 0, 0, 0, 0, 0, 0},
-        {8, 3, 9, 0, 0, 0, 0, 0, 0},
-        {0, 0, 0, 1, 7, 4, 0, 0, 0},
-        {0, 0, 0, 6, 2, 8, 0, 0, 0},
-        {0, 0, 0, 5, 9, 3, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 1, 6, 7},
-        {0, 0, 0, 0, 0, 0, 2, 5, 8},
-        {0, 0, 0, 0, 0, 0, 3, 4, 9}
-    };
-    // Dummy implementation:
-    // Copy static board to the provided BOARD
-    for (int i = 0; i < 9; i++) {
-        for (int j = 0; j < 9; j++) {
-            BOARD[i][j] = staticBoard[i][j];
         }
     }
 }
