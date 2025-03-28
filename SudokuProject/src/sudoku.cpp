@@ -163,7 +163,7 @@ bool solveBoardEfficient(int** BOARD)
      * This function uses a recursive backtracking approach combined with the Minimum Remaining Value (MRV)
      * heuristic to optimize the solving process by always selecting the cell with the fewest valid options.
      *
-     * TODO:
+     * TODO: DOOOOOOONNNNNNNEEEEEEE
      * - Implement the backtracking logic using the following steps:
      *   1. Use `findNextCell(BOARD)` to select the next cell with the fewest valid options.
      *   2. If no empty cells are left, the board is solved.
@@ -175,9 +175,20 @@ bool solveBoardEfficient(int** BOARD)
      * @param BOARD A 9x9 Sudoku board to be solved.
      * @return true if the board is successfully solved, false otherwise.
      */
-
-
-    return false; //temporary
+    auto [r, c, k] = findNextCell(BOARD);
+    if (r == -1 || c == -1) {
+        return true;
+    }
+    for (int i = 1; i < 10; i++) {
+        if (isValid(BOARD, r, c, i)) {
+            BOARD[r][c] = i;
+            if (solveBoardEfficient(BOARD)) {
+                return true;
+            }
+            BOARD[r][c] = 0;
+        }
+    }
+    return false;
 }
 
 
