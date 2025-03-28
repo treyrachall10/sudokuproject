@@ -56,7 +56,16 @@ std::vector<int> getShuffledVector() {
      */
     // Dummy implementation:
     // Temporary static return for testing
-    return {3, 1, 4, 2, 7, 6, 5, 9, 8};
+    vector<int> numbers {1, 4, 6, 2, 8, 5, 3, 9, 4, 7}; // vector of numbers 1-9
+
+    random_device rd; // generates random seed
+    mt19937 g(rd()); // uses random seed to generate random sequence
+    shuffle(numbers.begin(), numbers.end(), g); // uses random sequence to shuffle start to end of vector
+
+    return numbers; // returns shuffled vector
+
+
+   // return {3, 1, 4, 2, 7, 6, 5, 9, 8};
 }
 
 
@@ -126,10 +135,14 @@ void fillBoardWithIndependentBox(int** BOARD) {
      * - Remaining cells should remain empty.
      */
 
+
     for (int start = 0; start < 9; start +=3){
+        vector<int> shuffledNum = getShuffledVector();
+        int pos = 0;
+
         for (int row = start; row < start + 3; row++) {
-            for (int col = start; col < start + 3; col++) {
-                BOARD[row][col] = rand() % 9 + 1;
+            for (int col = start; col < start + 3; col++, pos++) {
+                BOARD[row][col] = shuffledNum[pos];
             }
         }
     }
