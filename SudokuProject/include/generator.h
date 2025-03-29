@@ -44,8 +44,16 @@ std::vector<int> getShuffledVector();
 void fillBoardWithIndependentBox(int** BOARD);
 
 /**
-  * TODO: Provide appropriate Documentation, see other examples provided within the projects
-  */
+ * @brief randomly selects cells to be deleted.
+ *
+ * Checks if inputs are valid (BOARD is not nullptr, n greater than 0 but less than 82).
+ * Generates array of 9 bitsets of size 9. Generates a random column and row number.
+ * Checks if bit at that column and row position in bitset has not been set.
+ * If it hasn't then set BOARD at that position to 0, otherwise do nothing and repeat iteration.
+ *
+ * @param BOARD A pointer to the 2D Sudoku board (int**) to fill.
+ * @param n An integer representing number of cells to delete.
+ */
 void deleteRandomItems(int** BOARD, const int& n);
 
 /**

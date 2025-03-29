@@ -29,6 +29,9 @@
 #include "../include/sudoku_io.h"
 #include <random>
 #include <bitset>
+#include <cstdlib>  // for rand() and srand()
+#include <ctime>    // for time()
+
 
 using namespace std;
 
@@ -194,7 +197,7 @@ void fillBoardWithIndependentBox(int** BOARD) {
 void deleteRandomItems(int** BOARD, const int& n) {
     // TODO: Implement logic to delete 'n' random cells from the board
     /**
-     * TODO:
+     * TODO:DDDDOOOOOONNNNNEEEEE
      * - Validate inputs (e.g., non-null board, valid 'n' between 1 and 81).
      * - Randomly select 'n' unique cells from the board.
      * - Replace selected cells with 0.
@@ -207,11 +210,18 @@ void deleteRandomItems(int** BOARD, const int& n) {
      * @param BOARD A 9x9 Sudoku board.
      * @param n The number of cells to delete (should be between 1 and 81).
      */
-
-    // Dummy implementation: Set the first 3 rows to 0
-    for (int r = 0; r < 3; r++) {
-        for (int c = 0; c < 9; c++) {
-            BOARD[r][c] = 0;
+    if (BOARD != nullptr && n > 0 && n < 82) {
+        bitset<9> bitBoard[9];
+        random_device rd;
+        mt19937 g(rd());
+        uniform_int_distribution<> dis(0, 8);
+        for (int i = 0; i < n; i++) {
+            int randRow = dis(g);
+            int randCol = dis(g);
+            if (!bitBoard[randRow].test(randCol)) {
+                bitBoard[randRow].set(randCol);
+                BOARD[randRow][randCol] = 0;
+            } else i--;
         }
     }
 }
