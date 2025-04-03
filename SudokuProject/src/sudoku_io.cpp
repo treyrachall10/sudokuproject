@@ -292,6 +292,7 @@ void compareSudokuSolvers(const int& experiment_size, const int& empty_boxes) {
         // -------------------- Testing solveBoardEfficient --------------------
         auto startEfficient = high_resolution_clock::now();
         solved = solve(board1, true);  // Solve using efficient solver
+
         auto endEfficient = high_resolution_clock::now();
 
         double elapsedEfficient = duration<double>(endEfficient - startEfficient).count();
@@ -300,22 +301,27 @@ void compareSudokuSolvers(const int& experiment_size, const int& empty_boxes) {
         // Validate solution
         if (solved && checkIfSolutionIsValid(board1)) {
             validSolutionsEfficientSolveBoard++;
+            deallocateBoard(board1);
+            board1 = nullptr;
         } else {
             cerr << "solveBoardEfficient produced an invalid solution.\n";
         }
 
-
         // -------------------- Testing solveBoard --------------------
         auto startSolve = high_resolution_clock::now();
         solved = solve(board2);  // Solve using basic solver
+
         auto endSolve = high_resolution_clock::now();
 
         double elapsedSolve = duration<double>(endSolve - startSolve).count();
         totalTimeSolveBoard += elapsedSolve;
 
+
         // Validate solution
         if (solved && checkIfSolutionIsValid(board2)) {
             validSolutionsSolveBoard++;
+            deallocateBoard(board2);
+            board2 = nullptr;
         } else {
             cerr << "solveBoard produced an invalid solution.\n";
         }

@@ -193,14 +193,8 @@ bool solveBoardEfficient(int** BOARD)
 
 
 bool solve(int** board, const bool& efficient) {
-    // TODO: Implement logic to select the appropriate solver based on the 'efficient' flag
-
-    /**
-     * - If efficient == true, return solveBoardEfficient(board).
-     * - Else, return solveBoard(board, 0, 0).
-     */
     if (efficient) {
         return solveBoardEfficient(board);
     }
-        return solveBoard(board, 0, 0); // Temporary: Always calls basic solver
+        return solveBoard(board, 0, 0);
 }
