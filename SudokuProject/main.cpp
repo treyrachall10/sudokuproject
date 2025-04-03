@@ -7,7 +7,7 @@
 using namespace std;
 
 // Define DEBUG_MODE to enable debug main, comment following to run the actual program
-#define DEBUG_MODE
+//#define DEBUG_MODE
 
 string PATH_TO_PUZZLES = "data/puzzles/";
 string PATH_TO_SOLUTIONS = "data/solutions/";
@@ -69,9 +69,9 @@ int main() {
 
     // Run experiments to compare solvers
     compareSudokuSolvers(10, 64);
-    compareSudokuSolvers(100, 45);
-    compareSudokuSolvers(1000, 32);
-    compareSudokuSolvers(10000, 16);
+    //compareSudokuSolvers(100, 45);
+    //compareSudokuSolvers(1000, 32);
+    //compareSudokuSolvers(10000, 16);
 
     return 0;
 }

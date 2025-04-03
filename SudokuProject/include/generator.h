@@ -23,14 +23,25 @@
 
 #include <vector>
 
- /**
-  * TODO: Provide appropriate Documentation, see other examples provided within the projects
-  */
+/**
+ * @brief creates a 9x9 sudoku board.
+ *
+ * Defines a 2d array of type integer. Initializes array by looping through
+ * each row and filling them with an array of integers of size 9.
+ *
+ * @return board A 2d integer array.
+ */
 int** getEmptyBoard();
 
 /**
-  * TODO: Provide appropriate Documentation, see other examples provided within the projects
-  */
+ * @brief creates a shuffled vector 1-9 inclusive.
+ *
+ * Initialized vector of type int of values ranging 1-9.
+ * Generates a random seed, generates a random sequence using that seed,
+ * uses sequence to shuffle start to end of vector
+ *
+ * @return shuffled vector.
+ */
 std::vector<int> getShuffledVector();
 
 /**
@@ -57,8 +68,16 @@ void fillBoardWithIndependentBox(int** BOARD);
 void deleteRandomItems(int** BOARD, const int& n);
 
 /**
-  * TODO: Provide appropriate Documentation, see other examples provided within the projects
-  */
+ * @brief generates solvable sudoku board.
+ *
+ * Initializes empty 9x9 sudoku board using getEmptyBoard(). Fills 3x3 diagonal boxes
+ * (top left, middle, bottom right) on board with random values 1-9 using
+ * fillBoardWithIndependentBox(). Solves board using solve(). Deletes random cells using
+ * deleteRandomItems()
+ *
+ * @param empty_boxes Integer indicating how many empty boxes to remove from sudoku board.
+ * @return A solvable board
+ */
 int** generateBoard(const int& empty_boxes);
 
 #endif // GENERATOR_H

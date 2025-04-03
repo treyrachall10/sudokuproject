@@ -65,7 +65,13 @@ std::tuple<int, int, int> findNextCell(int** BOARD);
 bool solveBoardEfficient(int** BOARD);
 
 /**
-  * TODO: Provide appropriate Documentation, see other examples provided within the projects
+  * @brief indicates which solver to use when solving sudoku board.
+  *
+  * Calls solveBoardEfficient() if efficient equals true. otherwise calls solveBoard().
+  *
+  * @param board pointer to the dynamically allocated 2D array.
+  * @param efficient boolean indicating which solver to use(false if not provided).
+  * @return solved board.
   */
 bool solve(int** board, const bool& efficient = false);
 

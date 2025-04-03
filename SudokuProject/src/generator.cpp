@@ -43,32 +43,14 @@ int** getEmptyBoard() {
     return board;
 }
 
-// Hint 1:  Implement a function to return shuffled vectors
-// Function to return a randomly shuffled vector from 1 to 9
 std::vector<int> getShuffledVector() {
-    // TODO: Implement shuffling logic here
-    /**
-     * TODO:
-     * - Create a vector with numbers 1 to 9.
-     * - Apply a shuffling algorithm to randomize the order.
-     * - Return the shuffled vector.
-     *
-     * Example Output: {3, 1, 4, 2, 7, 6, 5, 9, 8}
-     *
-     * @return std::vector<int> Shuffled numbers from 1 to 9.
-     */
-    // Dummy implementation:
-    // Temporary static return for testing
-    vector<int> numbers {1, 4, 6, 2, 8, 5, 3, 9, 4, 7}; // vector of numbers 1-9
+    vector<int> numbers {1, 2, 3, 4, 5, 6, 7, 8, 9};
 
-    random_device rd; // generates random seed
-    mt19937 g(rd()); // uses random seed to generate random sequence
-    shuffle(numbers.begin(), numbers.end(), g); // uses random sequence to shuffle start to end of vector
+    random_device rd;
+    mt19937 g(rd());
+    shuffle(numbers.begin(), numbers.end(), g);
 
-    return numbers; // returns shuffled vector
-
-
-   // return {3, 1, 4, 2, 7, 6, 5, 9, 8};
+    return numbers;
 }
 
 
@@ -140,12 +122,12 @@ void fillBoardWithIndependentBox(int** BOARD) {
 
 
     for (int start = 0; start < 9; start +=3){
-        vector<int> shuffledNum = getShuffledVector();
+        vector<int> shuffledVector = getShuffledVector();
         int pos = 0;
 
         for (int row = start; row < start + 3; row++) {
             for (int col = start; col < start + 3; col++, pos++) {
-                BOARD[row][col] = shuffledNum[pos];
+                BOARD[row][col] = shuffledVector[pos];
             }
         }
     }
