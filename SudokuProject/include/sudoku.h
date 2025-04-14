@@ -24,13 +24,31 @@
 #include <iostream>
 
 /**
-  * TODO: Provide appropriate Documentation, see other examples provided within the projects
-  */
+ * @brief Checks if a given number can be placed at a specific position on the Sudoku board.
+ *
+ * Verifies whether placing the number 'k' at position (r, c) violates Sudoku rules.
+ * Ensures 'k' does not already exist in the same row, column, or 3x3 subgrid.
+ *
+ * @param BOARD Pointer to a dynamically allocated 9x9 Sudoku board.
+ * @param r Row index of the cell.
+ * @param c Column index of the cell.
+ * @param k The number to be validated for placement.
+ * @return true if placement is valid, false otherwise.
+ */
 bool isValid(int** BOARD, const int& r, const int& c, const int& k);
 
 /**
-  * TODO: Provide appropriate Documentation, see other examples provided within the projects
-  */
+ * @brief Recursively solves a Sudoku board using backtracking.
+ *
+ * Attempts to fill the Sudoku board by placing digits 1 through 9 in each empty cell,
+ * checking if the placement is valid. Proceeds cell by cell in a row-wise fashion.
+ * Backtracks if no valid number can be placed in a cell.
+ *
+ * @param BOARD Pointer to a dynamically allocated 9x9 Sudoku board.
+ * @param r Row index to start solving from (default is 0).
+ * @param c Column index to start solving from (default is 0).
+ * @return true if the board is solved successfully, false otherwise.
+ */
 bool solveBoard(int** BOARD, const int& r=0, const int& c=0);
 
 // ========================= Efficient Solutions ==========================
