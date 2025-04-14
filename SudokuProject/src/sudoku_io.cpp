@@ -159,22 +159,6 @@ vector<string> getAllSudokuInFolder(const string& folderPath){
 }
 
 void createAndSaveNPuzzles(const int& num_puzzles, const int& complexity_empty_boxes, const string& destination, const string& prefix){
-    /**
-     * TODO:
-     * - Identify where in this function dynamically allocated memory (e.g., Sudoku boards) should be deallocated.
-     * - Use the `deallocateBoard()` function to free memory when:
-     *   1. The board is no longer needed (e.g., after solving or processing).
-     *   2. Before reassigning a pointer to a new board to avoid memory leaks.
-     *   3. Before returning from the function to ensure all allocated memory is freed.
-     *
-     * Example:
-     *   deallocateBoard(BOARD);  // Free memory allocated for the board
-     *
-     * Hints:
-     * - Always deallocate after you're done using the board.
-     * - Be mindful of potential memory leaks if the board isn't deallocated properly.
-     * - Set the pointer to nullptr after deallocation to avoid dangling pointers.
-     */
     int total_success = 0;
     for(int i=0; i < num_puzzles; i++){
         int** BOARD = generateBoard(complexity_empty_boxes);
@@ -190,8 +174,6 @@ void createAndSaveNPuzzles(const int& num_puzzles, const int& complexity_empty_b
     cout << total_success << " files written out of " << num_puzzles <<endl;
 }
 
-
-// Function to display a progress bar in the console
 void displayProgressBar(int current, int total, int barWidth = 50) {
     float progress = static_cast<float>(current) / total;
     int pos = static_cast<int>(barWidth * progress);
@@ -230,13 +212,6 @@ void solveAndSaveNPuzzles(const int &num_puzzles, const string& source, const st
     }
 }
 
-
-/**
- * @brief Performs a deep copy of a 9x9 Sudoku board.
- *
- * @param original The original 9x9 Sudoku board to copy.
- * @return int** A pointer to the newly allocated deep-copied board.
- */
 int** deepCopyBoard(int** original) {
     // Allocate memory for the new board
     int** newBoard = new int*[9];
@@ -252,22 +227,6 @@ int** deepCopyBoard(int** original) {
 }
 
 void compareSudokuSolvers(const int& experiment_size, const int& empty_boxes) {
-    /**
-     * TODO:
-     * - Identify where in this function dynamically allocated memory (e.g., Sudoku boards) should be deallocated.
-     * - Use the `deallocateBoard()` function to free memory when:
-     *   1. The board is no longer needed (e.g., after solving or processing).
-     *   2. Before reassigning a pointer to a new board to avoid memory leaks.
-     *   3. Before returning from the function to ensure all allocated memory is freed.
-     *
-     * Example:
-     *   deallocateBoard(BOARD);  // Free memory allocated for the board
-     *
-     * Hints:
-     * - Always deallocate after you're done using the board.
-     * - Be mindful of potential memory leaks if the board isn't deallocated properly.
-     * - Set the pointer to nullptr after deallocation to avoid dangling pointers.
-     */
     double totalTimeSolveBoard = 0.0;
     double totalTimeEfficientSolveBoard = 0.0;
 
