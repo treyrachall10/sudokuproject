@@ -4,4 +4,60 @@ Objective
 - This project is a Sudoku solver that creates and solves sudoku boards
 
 Key Features
- COMING SOON!!!
+- Generates Sudoku puzzles with configurable difficulty (via number of empty boxes)
+- Solves puzzles and saves the solutions
+- Compares different Sudoku solving algorithms
+- Includes a debug mode for testing individual components
+
+Project Structure
+├── include/
+│   ├── generator.h          # Functions for generating puzzles
+│   ├── sudoku.h            # Core Sudoku logic (e.g., solving, validation)
+│   ├── sudoku_io.h         # I/O operations (reading/writing puzzles)
+│   └── utils.h             # Utility functions (e.g., memory management)
+├── data/
+│   ├── puzzles/            # Folder to store generated puzzles
+│   └── solutions/          # Folder to store solved puzzles
+├── src/                    # Source files for the project (not shown in the repo you linked, but implied)
+│   ├── generator.cpp
+│   ├── sudoku.cpp
+│   ├── sudoku_io.cpp
+│   └── utils.cpp
+├── main.cpp                # Entry point for the program
+└── README.md               # Project documentation
+
+How to Build
+- Ensure you have a C++ compiler installed (e.g., g++, clang).
+- You can compile the project with the following command: g++ -std=c++11 -o sudoku main.cpp src/*.cpp
+- Make sure to replace src/*.cpp with the correct paths to your .cpp files if necessary.
+
+How to Run
+- To generate puzzles, solve them, and perform algorithm comparisons, run the compiled program: ./sudoku
+
+Run in Debug Mode
+- If you'd like to test specific functions without running the entire flow, uncomment the #define DEBUG_MODE line in main.cpp and recompile: //#define DEBUG_MODE
+- Then g++ -std=c++11 -o sudoku main.cpp src/*.cpp
+  ./sudoku
+
+Configuration
+- Modify the following constants in main.cpp to adjust the number of puzzles and the complexity of the generated puzzles:
+- int NUM_PUZZLE_TO_GENERATE = 10;        // Number of puzzles to generate
+  int COMPLEXITY_EMPTY_BOXES = 45;        // Difficulty (higher = more empty boxes)
+
+Dependencies
+- This project uses only standard C++ libraries (no third-party dependencies).
+
+Example Output
+- Generated puzzles are saved to: data/puzzles/
+- Solved puzzles are saved to: data/solutions/
+- For example, data/puzzles/PUZZLE_001.txt and data/solutions/SOLUTION_001.txt
+
+Authors
+- Trey Rachall (https://github.com/treyrachall10)
+- Seth Hirani (https://github.com/sethhirani)
+- Adan Torres (https://github.com/adanTorres)
+
+
+
+
+
