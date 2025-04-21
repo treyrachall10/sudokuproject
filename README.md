@@ -12,19 +12,19 @@ Key Features
 Project Structure
 ├── include/
 │   ├── generator.h          # Functions for generating puzzles
-│   ├── sudoku.h            # Core Sudoku logic (e.g., solving, validation)
-│   ├── sudoku_io.h         # I/O operations (reading/writing puzzles)
-│   └── utils.h             # Utility functions (e.g., memory management)
+│   ├── sudoku.h             # Core Sudoku logic (e.g., solving, validation)
+│   ├── sudoku_io.h          # I/O operations (reading/writing puzzles)
+│   └── utils.h              # Utility functions (e.g., memory management)
 ├── data/
-│   ├── puzzles/            # Folder to store generated puzzles
-│   └── solutions/          # Folder to store solved puzzles
-├── src/                    # Source files for the project (not shown in the repo you linked, but implied)
+│   ├── puzzles/             # Folder to store generated puzzles
+│   └── solutions/           # Folder to store solved puzzles
+├── src/                     # Source files for the project (not shown in the repo you linked, but implied)
 │   ├── generator.cpp
 │   ├── sudoku.cpp
 │   ├── sudoku_io.cpp
 │   └── utils.cpp
-├── main.cpp                # Entry point for the program
-└── README.md               # Project documentation
+├── main.cpp                 # Entry point for the program
+└── README.md                # Project documentation
 
 How to Build
 - Ensure you have a C++ compiler installed (e.g., g++, clang).
