@@ -1,14 +1,36 @@
 # Sudoku Project
 
-## Objective
-This project is a Sudoku solver that creates and solves sudoku boards.
+This project implements a Sudoku puzzle solver and generator using C++. The solver includes both basic and optimized backtracking algorithms for solving Sudoku puzzles efficiently. Additionally, the program generates solvable Sudoku puzzles with varying degrees of complexity.
 
 ## Key Features
-- Generates Sudoku puzzles with configurable difficulty (via number of empty boxes)
+**Sudoku Puzzle Generation**:
+- Generates Sudoku boards with customizable difficulty (number of empty boxes).
+- Ensures puzzles are solvable by initially solving a fully generated board.
+
+**Puzzle Solving**
+- Includes two solving strategies:
+    - Basic backtracking (`solveBoard`)
+    - Optimized backtracking (`solveBoardEfficient`)
+
+**Solution Checker**
+- Verifies if solved puzzles are correct 
 - Solves puzzles and saves the solutions
-- Compares different Sudoku solving algorithms
+
+**Solver Comparison**
+
+- Compares the efficiency of both solving algorithms
+
+**DEBUG Mode**
 - Includes a debug mode for testing individual components
 
+
+
+## File Structure 
+- `main.cpp`: Starts and manages the puzzle generation, solving, and comparisons.
+- `sudoku.cpp`: Contains the puzzle-solving logic.
+- `generator.cpp`: Creates solvable Sudoku puzzles.
+- `sudoku_io.cpp`: Handles reading puzzles from files and saving solutions.
+- `utils.cpp`: Memory management and directory setup.
 ## Project Structure
 ```
 main()
@@ -79,12 +101,12 @@ int COMPLEXITY_EMPTY_BOXES = 45;       // Difficulty (higher = more empty boxes)
 ## Dependencies
 - This project uses only standard C++ libraries (no third-party dependencies).
 
-## Example Output
-- Generated puzzles are saved to: `data/puzzles/`
-- Solved puzzles are saved to: `data/solutions/`
-- Example files:
-  - `data/puzzles/PUZZLE_001.txt`
-  - `data/solutions/SOLUTION_001.txt`
+## Output
+The program will:
+
+- Generate puzzles and save them to `data/puzzles/`.
+- Solve puzzles and save solutions to `data/solutions/`.
+- Show comparisons between the two solver methods.`
 
 ## Authors
 - [Trey Rachall](https://github.com/treyrachall10)
