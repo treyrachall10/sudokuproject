@@ -11,21 +11,37 @@ This project is a Sudoku solver that creates and solves sudoku boards.
 
 ## Project Structure
 ```
-├── include/
-│   ├── generator.h          # Functions for generating puzzles
-│   ├── sudoku.h             # Core Sudoku logic (e.g., solving, validation)
-│   ├── sudoku_io.h          # I/O operations (reading/writing puzzles)
-│   └── utils.h              # Utility functions (e.g., memory management)
-├── data/
-│   ├── puzzles/             # Folder to store generated puzzles
-│   └── solutions/           # Folder to store solved puzzles
-├── src/                     # Source files for the project (not shown in the repo you linked, but implied)
-│   ├── generator.cpp
-│   ├── sudoku.cpp
-│   ├── sudoku_io.cpp
-│   └── utils.cpp
-├── main.cpp                 # Entry point for the program
-└── README.md                # Project documentation
+main()
+│
+├── initDataFolder()
+│   └──createFolder
+│
+├── createAndSaveNPuzzles()
+│   ├── generateBoard()
+│   │   ├── getEmptyBoard()
+│   │   ├── fillBoardWithIndependentBox()
+│   │   │   └── getShuffledVector()
+│   │   ├── solve()
+│   │   │   └── solveBoard() 
+│   │   └── deleteRandomItems()
+│   ├── writeSudokuToFile()
+│   └── deallocateBoard()
+│
+├── solveAndSaveNPuzzles()
+│   ├── getAllSudokuInFolder()
+│   ├── readSudokuFromFile()
+│   ├── solve()
+│   │   ├── solveBoardEfficient() 
+│   │   └── solveBoard() 
+│   ├── checkIfSolutionIsValid()
+│   └── writeSudokuToFile()
+│
+└── compareSudokuSolvers()
+    ├── generateBoard()
+    ├── deepCopyBoard()
+    ├── solveBoardEfficient()
+    ├── solveBoard()
+    └── checkIfSolutionIsValid()
 ```
 
 ## How to Build
