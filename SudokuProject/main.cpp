@@ -7,7 +7,7 @@
 using namespace std;
 
 // Define DEBUG_MODE to enable debug main, comment following to run the actual program
-//#define DEBUG_MODE
+#define DEBUG_MODE
 
 string PATH_TO_PUZZLES = "data/puzzles/";
 string PATH_TO_SOLUTIONS = "data/solutions/";
@@ -33,27 +33,12 @@ int COMPLEXITY_EMPTY_BOXES = 45;
  * - Run isolated tests to debug specific issues.
  */
 int main() {
-    // You can modify this main function to access all other function implemented
-    //
-    cout << "Running in DEBUG MODE...\n";
+    initDataFolder();
+    createAndSaveNPuzzles(NUM_PUZZLE_TO_GENERATE, COMPLEXITY_EMPTY_BOXES, PATH_TO_PUZZLES, PUZZLE_PREFIX);
+    solveAndSaveNPuzzles(NUM_PUZZLE_TO_GENERATE, PATH_TO_PUZZLES, PATH_TO_SOLUTIONS, SOLUTION_PREFIX);
 
-    int** BOARD = new int*[9];
-    for(int i = 0; i < 9; i++){
-        BOARD[i] = new int[9] {0, 0, 0, 0, 0, 0, 0, 0, 0};
-    }//Initialization ends here
-
-    for (int start = 0; start < 9; start +=3){
-        for (int row = start; row < start + 3; row++) {
-            for (int col = start; col < start + 3; col++) {
-                BOARD[row][col] = rand() % 9 + 1;
-            }
-        }
-    }
-
-
-    // Clean up memory
-    deallocateBoard(BOARD);
-
+    // Run experiments to compare solvers
+    compareSudokuSolvers(10, 64);
     return 0;
 }
 #else

@@ -51,35 +51,35 @@ build cmake_object_order_depends_target_project: phony || .
 
 build CMakeFiles/project.dir/SudokuProject/src/generator.cpp.o: CXX_COMPILER__project_unscanned_Debug /Users/treyrachall/Desktop/project/SudokuProject/src/generator.cpp || cmake_object_order_depends_target_project
   DEP_FILE = CMakeFiles/project.dir/SudokuProject/src/generator.cpp.o.d
-  FLAGS = -g -std=gnu++14 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   INCLUDES = -I/Users/treyrachall/Desktop/project/SudokuProject/include
   OBJECT_DIR = CMakeFiles/project.dir
   OBJECT_FILE_DIR = CMakeFiles/project.dir/SudokuProject/src
 
 build CMakeFiles/project.dir/SudokuProject/src/sudoku.cpp.o: CXX_COMPILER__project_unscanned_Debug /Users/treyrachall/Desktop/project/SudokuProject/src/sudoku.cpp || cmake_object_order_depends_target_project
   DEP_FILE = CMakeFiles/project.dir/SudokuProject/src/sudoku.cpp.o.d
-  FLAGS = -g -std=gnu++14 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   INCLUDES = -I/Users/treyrachall/Desktop/project/SudokuProject/include
   OBJECT_DIR = CMakeFiles/project.dir
   OBJECT_FILE_DIR = CMakeFiles/project.dir/SudokuProject/src
 
 build CMakeFiles/project.dir/SudokuProject/src/sudoku_io.cpp.o: CXX_COMPILER__project_unscanned_Debug /Users/treyrachall/Desktop/project/SudokuProject/src/sudoku_io.cpp || cmake_object_order_depends_target_project
   DEP_FILE = CMakeFiles/project.dir/SudokuProject/src/sudoku_io.cpp.o.d
-  FLAGS = -g -std=gnu++14 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   INCLUDES = -I/Users/treyrachall/Desktop/project/SudokuProject/include
   OBJECT_DIR = CMakeFiles/project.dir
   OBJECT_FILE_DIR = CMakeFiles/project.dir/SudokuProject/src
 
 build CMakeFiles/project.dir/SudokuProject/src/utils.cpp.o: CXX_COMPILER__project_unscanned_Debug /Users/treyrachall/Desktop/project/SudokuProject/src/utils.cpp || cmake_object_order_depends_target_project
   DEP_FILE = CMakeFiles/project.dir/SudokuProject/src/utils.cpp.o.d
-  FLAGS = -g -std=gnu++14 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   INCLUDES = -I/Users/treyrachall/Desktop/project/SudokuProject/include
   OBJECT_DIR = CMakeFiles/project.dir
   OBJECT_FILE_DIR = CMakeFiles/project.dir/SudokuProject/src
 
 build CMakeFiles/project.dir/SudokuProject/main.cpp.o: CXX_COMPILER__project_unscanned_Debug /Users/treyrachall/Desktop/project/SudokuProject/main.cpp || cmake_object_order_depends_target_project
   DEP_FILE = CMakeFiles/project.dir/SudokuProject/main.cpp.o.d
-  FLAGS = -g -std=gnu++14 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   INCLUDES = -I/Users/treyrachall/Desktop/project/SudokuProject/include
   OBJECT_DIR = CMakeFiles/project.dir
   OBJECT_FILE_DIR = CMakeFiles/project.dir/SudokuProject
